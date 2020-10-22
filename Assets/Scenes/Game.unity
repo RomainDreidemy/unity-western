@@ -226,6 +226,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerLife: 5
+  PictureLife1: {fileID: 589584063}
+  PictureLife2: {fileID: 612701543}
+  PictureLife3: {fileID: 14127492}
+  PictureLife4: {fileID: 417081596}
+  PictureLife5: {fileID: 631546526}
 --- !u!114 &158548243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalScore: 0
+  TxtScore: {fileID: 276641680}
 --- !u!4 &158548244
 Transform:
   m_ObjectHideFlags: 0
