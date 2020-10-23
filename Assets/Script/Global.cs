@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Global : MonoBehaviour
 {
-    public static int DIFICULTY;
-    public static int EASY = 0;
-    public static int MEDIUM = 1;
-    public static int HARDCORE = 2;
 
-    public void SetDificulty(int dif = 0)
+    public float Speed = 10;
+
+    public static LevelDificulty DIFICULTY;
+
+    public enum LevelDificulty : int { Easy = 0, Medium = 1, Hardcore = 2}
+
+    public void SetDificulty(int dif = (int)LevelDificulty.Easy)
     {
-        Global.DIFICULTY = dif;
+        Debug.Log(dif);
+        Global.DIFICULTY = (LevelDificulty)dif;
         SceneManager.LoadScene("Game");
     }
 

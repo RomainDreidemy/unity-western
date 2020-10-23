@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Life : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Life : MonoBehaviour
         if(this.PlayerLife < this.PlayerMaxLife)
         {
             this.PlayerLife += Value;
+            this.seePictoLife();
         }
     }
 
@@ -35,12 +37,57 @@ public class Life : MonoBehaviour
 
         if(this.PlayerLife <= 0)
         {
-            //TODO : Changer de scene
-            Debug.Log("Perdu");
+             SceneManager.LoadScene("Lose");
         }
         else
         {
-            switch (this.PlayerLife)
+            this.seePictoLife();
+        }
+    }
+
+    public void updateLifeboard()
+    {
+        //TODO : update l'affichage des vies
+    }
+
+    void initLife()
+    {
+        switch (Global.DIFICULTY)
+        {
+            case Global.LevelDificulty.Easy :
+                this.PlayerLife = this.PlayerMaxLife = 5;
+                this.PictureLife1.enabled = true;
+                this.PictureLife2.enabled = true;
+                this.PictureLife3.enabled = true;
+                this.PictureLife4.enabled = true;
+                this.PictureLife5.enabled = true;
+            break;
+            case Global.LevelDificulty.Medium : 
+                this.PlayerLife = this.PlayerMaxLife = 3;
+                this.PictureLife1.enabled = true;
+                this.PictureLife2.enabled = true;
+                this.PictureLife3.enabled = true;
+                this.PictureLife4.enabled = false;
+                this.PictureLife5.enabled = false;
+            break;
+            case Global.LevelDificulty.Hardcore : 
+                this.PlayerLife = this.PlayerMaxLife = 1;
+                this.PictureLife1.enabled = true;
+                this.PictureLife2.enabled = false;
+                this.PictureLife3.enabled = false;
+                this.PictureLife4.enabled = false;
+                this.PictureLife5.enabled = false;
+            break;
+            
+            default:
+                this.PlayerLife = 5;
+            break;
+        }
+    }
+
+    void seePictoLife()
+    {
+        switch (this.PlayerLife)
             {
                 case 5 :
                     this.PictureLife5.enabled = true;
@@ -61,46 +108,5 @@ public class Life : MonoBehaviour
                     this.PictureLife2.enabled = false;
                 break;
             }
-        }
-    }
-
-    public void updateLifeboard()
-    {
-        //TODO : update l'affichage des vies
-    }
-
-    void initLife()
-    {
-        switch (Global.DIFICULTY)
-        {
-            case 0 :
-                this.PlayerLife = this.PlayerMaxLife = 5;
-                this.PictureLife1.enabled = true;
-                this.PictureLife2.enabled = true;
-                this.PictureLife3.enabled = true;
-                this.PictureLife4.enabled = true;
-                this.PictureLife5.enabled = true;
-            break;
-            case 1 : 
-                this.PlayerLife = this.PlayerMaxLife = 3;
-                this.PictureLife1.enabled = true;
-                this.PictureLife2.enabled = true;
-                this.PictureLife3.enabled = true;
-                this.PictureLife4.enabled = false;
-                this.PictureLife5.enabled = false;
-            break;
-            case 2 : 
-                this.PlayerLife = this.PlayerMaxLife = 1;
-                this.PictureLife1.enabled = true;
-                this.PictureLife2.enabled = false;
-                this.PictureLife3.enabled = false;
-                this.PictureLife4.enabled = false;
-                this.PictureLife5.enabled = false;
-            break;
-            
-            default:
-                this.PlayerLife = 5;
-            break;
-        }
     }
 }

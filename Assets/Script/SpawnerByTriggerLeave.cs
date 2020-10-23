@@ -24,7 +24,7 @@ public class SpawnerByTriggerLeave : MonoBehaviour
 
         Vector3 spawnerPos = transform.position;
 
-        spawnerPos.x += Random.Range(Min, Max);
+        spawnerPos.z += Random.Range(Min, Max);
 
         spawnee.transform.position = spawnerPos;
     }
