@@ -2454,7 +2454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52.153015, y: -43.64099}
+  m_AnchoredPosition: {x: 52.152954, y: -43.64099}
   m_SizeDelta: {x: 73.8295, y: 86.31836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1240065496
@@ -2790,8 +2790,8 @@ MonoBehaviour:
   - {fileID: 112734, guid: b7bdd751d1270e14291b000d68d117c1, type: 3}
   - {fileID: 146236, guid: 802bd3dc24c20394ca2037c1b9c882a0, type: 3}
   - {fileID: 118734, guid: a45f923de9555884cbe160883ce87a74, type: 3}
-  Min: -2
-  Max: 3
+  Min: 0
+  Max: 0
 --- !u!65 &1561193395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2860,7 +2860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561193391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.303, y: 0.926, z: 0.97}
+  m_LocalPosition: {x: 38.303, y: 0.7, z: -0.9}
   m_LocalScale: {x: 9.703385, y: 0.4399124, z: 5.401043}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3411,7 +3411,7 @@ MonoBehaviour:
   - {fileID: 105562, guid: 65da5bb2d6e288b41baa018d8fec58f3, type: 3}
   - {fileID: 114448, guid: 50294217694c1a145a9a3b86f853c022, type: 3}
   - {fileID: 3849906661894944773, guid: 95da90a6848bb4a8fae9d225805ecba8, type: 3}
-  - {fileID: 750355808257189029, guid: fe4ea4047dc874feab1c592b80e24e39, type: 3}
+  - {fileID: 7192477764911127181, guid: 5e7be6be4698641f39b0ff33959de195, type: 3}
   - {fileID: 6477948854851585058, guid: 5c46c0143120442ddaeb5f024c161e47, type: 3}
   - {fileID: 3849906661894944773, guid: 95da90a6848bb4a8fae9d225805ecba8, type: 3}
   Min: -2
@@ -3504,7 +3504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RespondTo:
     serializedVersion: 2
-    m_Bits: 5888
+    m_Bits: 38656
   TriggerEnter:
     m_PersistentCalls:
       m_Calls: []
