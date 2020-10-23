@@ -28,7 +28,7 @@ public class SpawnerByTriggerAjustPosition : MonoBehaviour
 
             // Modifier cette pos par la longueur du dernier spawnee
             BoxCollider coll = this.LastSpawnee.GetComponent<BoxCollider>();
-            LastSpawneePos.z += coll.bounds.size.z;
+            LastSpawneePos.x += coll.bounds.size.x;
             spawnee.transform.position = LastSpawneePos;
 
         }else{

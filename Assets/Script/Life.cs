@@ -37,7 +37,7 @@ public class Life : MonoBehaviour
 
         if(this.PlayerLife <= 0)
         {
-             SceneManager.LoadScene("Lose");
+             SceneManager.LoadScene("Fin");
         }
         else
         {

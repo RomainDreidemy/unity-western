@@ -8,6 +8,8 @@ public class Global : MonoBehaviour
 
     public float Speed = 10;
 
+    public static int LastScore;
+
     public static LevelDificulty DIFICULTY;
 
     public enum LevelDificulty : int { Easy = 0, Medium = 1, Hardcore = 2}

@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
 
     public int totalScore = 0;
 
-    public Text TxtScore;
+    public TextMeshProUGUI TxtScore;
 
     void Start()
     {
@@ -19,17 +19,18 @@ public class Score : MonoBehaviour
     {
         this.totalScore += Value;
         this.updateScoreboard();
+        Global.LastScore = this.totalScore;
     }
 
     public void RemoveScore(int Value)
     {
         this.totalScore -= Value;
         this.updateScoreboard();
+        Global.LastScore = this.totalScore;
     }
 
     void updateScoreboard()
     {
-        //TODO : Update le scoreboard
         this.TxtScore.text = this.totalScore.ToString();
     }
 }
