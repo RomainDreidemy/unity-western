@@ -7,6 +7,7 @@ public class Global : MonoBehaviour
 {
 
     public float Speed = 10;
+    public float MultSpeed = 0.1f;
 
     public static int LastScore;
 
@@ -21,18 +22,14 @@ public class Global : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void SpeedByTimePassed()
     {
-        
+        this.Speed += this.MultSpeed * Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        this.SpeedByTimePassed();
     }
 }

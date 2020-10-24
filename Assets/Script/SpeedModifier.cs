@@ -11,6 +11,8 @@ public class SpeedModifier : MonoBehaviour
     float SpeedInit;
     public float Acceleration = 10;
 
+    public AudioSource AudioSnake;
+
     bool IsAccell = false;
 
     float AccelEnCours;
@@ -24,6 +26,8 @@ public class SpeedModifier : MonoBehaviour
     public void DoubleSpeed(GameObject obj) 
     {
         MalusVitesseFactor factorComp = obj.GetComponent<MalusVitesseFactor>();
+        this.AudioSnake.Play();
+        
         if(!this.IsAccell){
             this.IsAccell = true;
 

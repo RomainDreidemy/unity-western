@@ -15,6 +15,11 @@ public class Life : MonoBehaviour
 
     Global globalRef;
 
+    public Animator animator;
+    public AudioSource AudioHurt;
+    public AudioSource AudioLifeUp;
+
+
     void Start()
     {
         this.globalRef = GetComponent<Global>();
@@ -27,6 +32,7 @@ public class Life : MonoBehaviour
         if(this.PlayerLife < this.PlayerMaxLife)
         {
             this.PlayerLife += Value;
+            this.AudioLifeUp.Play();
             this.seePictoLife();
         }
     }
@@ -34,6 +40,9 @@ public class Life : MonoBehaviour
     public void removePlayerLife(int Value)
     {
         this.PlayerLife -= Value;
+        this.animator.SetTrigger("Hit");
+        this.AudioHurt.Play();
+
 
         if(this.PlayerLife <= 0)
         {
@@ -55,6 +64,7 @@ public class Life : MonoBehaviour
         switch (Global.DIFICULTY)
         {
             case Global.LevelDificulty.Easy :
+                Debug.Log("Easy");
                 this.PlayerLife = this.PlayerMaxLife = 5;
                 this.PictureLife1.enabled = true;
                 this.PictureLife2.enabled = true;
@@ -63,6 +73,8 @@ public class Life : MonoBehaviour
                 this.PictureLife5.enabled = true;
             break;
             case Global.LevelDificulty.Medium : 
+                Debug.Log("Medium");
+
                 this.PlayerLife = this.PlayerMaxLife = 3;
                 this.PictureLife1.enabled = true;
                 this.PictureLife2.enabled = true;
@@ -71,6 +83,8 @@ public class Life : MonoBehaviour
                 this.PictureLife5.enabled = false;
             break;
             case Global.LevelDificulty.Hardcore : 
+                Debug.Log("Hardcore");
+
                 this.PlayerLife = this.PlayerMaxLife = 1;
                 this.PictureLife1.enabled = true;
                 this.PictureLife2.enabled = false;
@@ -80,6 +94,8 @@ public class Life : MonoBehaviour
             break;
             
             default:
+                Debug.Log("Default");
+
                 this.PlayerLife = 5;
             break;
         }

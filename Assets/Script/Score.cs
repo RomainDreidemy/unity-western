@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     public int totalScore = 0;
 
     public TextMeshProUGUI TxtScore;
+    public AudioSource AudioScore;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class Score : MonoBehaviour
         this.totalScore += Value;
         this.updateScoreboard();
         Global.LastScore = this.totalScore;
+        this.AudioScore.Play();
     }
 
     public void RemoveScore(int Value)
